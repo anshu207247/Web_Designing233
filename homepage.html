@@ -1,0 +1,35 @@
+<!--ANSHU SHAKYA 2400320100233-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABES Book Store</title>
+    <style>
+        table{
+            width: 100%;
+        }
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: large;
+        }
+        .flex-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div><iframe src="top.html" width="100%"></iframe></div>
+    <div class="flex-container">
+        <dev style="flex-grow: 1">
+            <iframe src="left.html" width="305px" height="550px"></iframe>
+        </dev>
+        <dev style="flex-grow: 5">
+            <iframe src="home.html" name="right" width="1200px" height="550px"></iframe>
+        </dev>
+    </div>
+</body>
+</html>

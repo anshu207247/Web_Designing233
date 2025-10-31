@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<style>
+    h1 {
+    text-align: center;
+}
+form{
+    text-align: center;
+    background-image: url(https://img.freepik.com/free-vector/pastel-gradient-blur-background-vector_53876-174842.jpg?semt=ais_hybrid&w=740&q=80);
+    width:40%;
+    margin: 40px auto; 
+    padding: 30px; 
+    border-spacing: 50px;
+    border: 2px solid; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
+    
+}
+body{
+    background-image: url(https://wallpapers.com/images/hd/light-color-background-nap5kv1drli0yv65.jpg);
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+}
+ button{
+        width: 100px;
+        margin: 20px auto 0;
+        padding: 6px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+input[type="text"],
+input[type="password"],
+input[type="number"],
+    textarea {
+        width: 60%;
+        padding: 10px;
+        margin-top: 5px;
+        background-color: transparent; 
+        border: 1px solid rgba(209, 204, 204, 0.706); 
+        border-radius: 5px;
+        font-size: 16px;
+        color: rgba(31, 30, 30, 0.825); 
+    }
+header{
+    background-color: rgb(204, 185, 206);
+    padding: 20px;
+    color: rgb(8, 8, 8);
+    padding: 15px;
+    font-size:larger;
+    width: 100%;
+    
+    
+}
+.image_container{
+    display: flex;
+    gap: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+</style>
+<body>
+<main>   
+    <form action="/action.php"> 
+        <h1>REGISTRATION FORM</h1>
+        <div class="user"><b>Username : </b>
+        <input type="text" placeholder="Username">
+        </div>
+        <p><b>Password :</b>
+        <input type="password" placeholder="Enter required password">
+        </p>
+        <p><b>Contact :</b>
+        <input type="text" placeholder="Enter required Contact Number">
+        </p>
+        <p><b>Age :</b>
+        <input type="number" placeholder="Enter your age">
+        </p>
+        <p><b>Gender :</b>
+        <label id="101">
+        <input type="radio" value="male" name="gender" id="101">Male
+        </label>
+        <label id="102">
+        <input type="radio" value="female" name="gender" id="102">Female
+        </label>
+        </p>
+        <p><b>Select Your Year :</b>
+        <label id="first">
+        <input type="radio" value="first" name="year" id="first">First
+        </label>
+        <label id="second">
+        <input type="radio" value="first" name="year" id="second">Second
+        </label>
+        </p><br>
+        <B>Select your languages:</B>
+        <select id="languages">
+        <option value="English">English</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Spanish">Spanish</option>
+</select><br><br>
+        <b><u>Select Your Subjects :</b></u><br>
+    <div class="form-row subjects-row">
+         <label id="Mathematics">
+        <input type="checkbox" value="Mathematics" name="Subjects" id="Mathematics">Maths
+        </label>
+        <br>
+         <label text-align="left" id="Physics">
+        <input type="checkbox" value="Physics" name="Subjects" id="Physics">Physics
+        </label>
+        <br>
+        <label id="Chemistry">
+        <input type="checkbox" value="Chemistry" name="Subjects" id="Chemistry">Chemistry
+        </label>
+        <br>
+        <label id="Computer">
+        <input type="checkbox" value="Computer" name="Subjects" id="Computer">Computer Applications
+        </label>
+        <br>
+        <label id="IT">
+        <input type="checkbox" value="IT" name="Subjects" id="IT">Information Technology
+        </label>
+    </div>
+<B>Select your languages:</B>
+        <select id="languages">
+        <option value="English">English</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Spanish">Spanish</option>
+</select>
+        <br>
+        <br>
+        <B>Select your respective city from following :</B>
+        <select id="city">
+        <option value="Agra">AGRA</option>
+        <option value="MUMBAI">MUMBAI</option>
+        <option value="DELHI">DELHI</option>
+        <option value="PUNE">PUNE</option>
+        <option value="DEHRADUN">DEHRADUN</option>
+</select>  <br><br>  
+        <br>
+        <textarea name="feedback" id="101" placeholder="Please give your valuable feedback here" rows="6" cols="50"></textarea>
+        <br>
+        <button type="submit">SUBMIT</button>
+    </form>
+</main>
+</body>
+</html>
