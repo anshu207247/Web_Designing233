@@ -1,3 +1,4 @@
+<!--ANSHU SHAKYA  2400320100233-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTRATION FORM</title>
     <link rel="stylesheet" href="form.css">
-</head>
 <style>
     h1 {
     text-align: center;
@@ -42,6 +42,7 @@ body{
 input[type="text"],
 input[type="password"],
 input[type="number"],
+input[type="email"],
     textarea {
         width: 60%;
         padding: 10px;
@@ -53,23 +54,79 @@ input[type="number"],
         color: rgba(31, 30, 30, 0.825); 
     }
 </style>
+<script>
+ function validateForm(){
+    const Username=document.myForm.Username.value.trim()
+    const password=document.myForm.password.value.trim()
+    const email=document.myForm.email.value.trim()
+    const phone=document.myForm.phone.value.trim()
+
+    const Usernamepattern=/^[A-Za-z\s]+$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phonePattern = /^[0-9]{10}$/;
+
+    // Username Validation
+    if(Username === ""){
+        alert("Enter Your Name");
+        return false;
+    }
+    else if(!Usernamepattern.test(Username)){
+        alert("name should contain only letters and spaces");
+        return false;
+    }
+    else if(Username.length<6){
+        alert("name should contain atleast 6 characters");
+        return false;
+    }
+     
+    // Password Validation
+    if(password === ""){
+        alert("Password should not be blank");
+        return false;
+    }
+    else if(password.length<6){
+        alert("password should contain atleast 6 characters");
+        return false;
+    }
+
+    // Email Validation
+    if (email === "") {
+        alert("Enter your email");
+        return false;
+    } else if (!emailPattern.test(email)) {
+        alert("Enter a valid email address");
+        return false;
+    }
+    // Phone Validation
+    if (phone === "") {
+        alert("Enter your phone number");
+        return false;
+    } else if (!phonePattern.test(phone)) {
+        alert("Phone number should be 10 digits");
+        return false;
+    }
+    alert("Form submitted successfully");
+    return true;
+}  
+</script>
+</head>
 <body>
 <main>   
-    <form action="/action.php"> 
+    <form name="myForm" onsubmit="return validateForm()"> 
         <h1>REGISTRATION FORM</h1>
         <div class="user"><b>Username : </b>
-        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Username" name="Username">
         </div>
         <p><b>Password :</b>
-        <input type="password" placeholder="Enter required password">
+        <input type="password" placeholder="Enter required password" name="password">
         </p>
-        <p><b>Contact :</b>
-        <input type="text" placeholder="Enter required Contact Number">
+        <p><b>Email :</b>
+        <input type="email" placeholder="Enter your email" name="email">
         </p>
-        <p><b>Age :</b>
-        <input type="number" placeholder="Enter your age">
+        <p><b>Phone Number :</b>
+        <input type="text" placeholder="Enter required Phone Number" name="phone">
         </p>
-        <p><b>Gender :</b>
+        <p><b>Sex :</b>
         <label id="101">
         <input type="radio" value="male" name="gender" id="101">Male
         </label>
@@ -77,63 +134,45 @@ input[type="number"],
         <input type="radio" value="female" name="gender" id="102">Female
         </label>
         </p>
-        <p><b>Select Your Year :</b>
-        <label id="first">
-        <input type="radio" value="first" name="year" id="first">First
-        </label>
-        <label id="second">
-        <input type="radio" value="first" name="year" id="second">Second
-        </label>
-        </p><br>
-        <B>Select your languages:</B>
-        <select id="languages">
-        <option value="English">English</option>
-        <option value="French">French</option>
-        <option value="German">German</option>
-        <option value="Hindi">Hindi</option>
-        <option value="Spanish">Spanish</option>
-</select><br><br>
-        <b><u>Select Your Subjects :</b></u><br>
-    <div class="form-row subjects-row">
-         <label id="Mathematics">
-        <input type="checkbox" value="Mathematics" name="Subjects" id="Mathematics">Maths
-        </label>
-        <br>
-         <label text-align="left" id="Physics">
-        <input type="checkbox" value="Physics" name="Subjects" id="Physics">Physics
-        </label>
-        <br>
-        <label id="Chemistry">
-        <input type="checkbox" value="Chemistry" name="Subjects" id="Chemistry">Chemistry
-        </label>
-        <br>
-        <label id="Computer">
-        <input type="checkbox" value="Computer" name="Subjects" id="Computer">Computer Applications
-        </label>
-        <br>
-        <label id="IT">
-        <input type="checkbox" value="IT" name="Subjects" id="IT">Information Technology
-        </label>
-    </div>
 <B>Select your languages:</B>
-        <select id="languages">
-        <option value="English">English</option>
-        <option value="French">French</option>
-        <option value="German">German</option>
-        <option value="Hindi">Hindi</option>
-        <option value="Spanish">Spanish</option>
-</select>
-        <br>
-        <br>
-        <B>Select your respective city from following :</B>
-        <select id="city">
-        <option value="Agra">AGRA</option>
-        <option value="MUMBAI">MUMBAI</option>
-        <option value="DELHI">DELHI</option>
-        <option value="PUNE">PUNE</option>
-        <option value="DEHRADUN">DEHRADUN</option>
-</select>  <br><br>  
-        <br>
+         <tr>
+                <td>
+                    <input type="checkbox" name="lang" value="English"> English
+                    <input type="checkbox" name="lang" value="Telugu"> Telugu
+                    <input type="checkbox" name="lang" value="Hindi"> Hindi
+                    <input type="checkbox" name="lang" value="Tamil"> Tamil
+                </td>
+        </tr><br><br>
+<B>Date Of Birth :</B>
+        <tr>
+                <td>
+                    <select name="day">
+                        <option value="">Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        </select>
+
+                    <select name="month">
+                        <option value="">Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        </select>
+
+                    <select name="year">
+                        <option value="">Year</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        </select>
+                </td>
+        </tr>
         <textarea name="feedback" id="101" placeholder="Please give your valuable feedback here" rows="6" cols="50"></textarea>
         <br>
         <button type="submit">SUBMIT</button>
